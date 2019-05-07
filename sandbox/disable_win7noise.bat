@@ -95,6 +95,10 @@ schtasks.exe /Change /TN "\Microsoft\Windows\Windows Media Sharing\UpdateLibrary
 schtasks.exe /Change /TN "\Microsoft\Windows\Windows Media Sharing\UpdateLibrary" /Disable /ru ""
 
 REM binaryballistics - disable google update and adobe update
+sc config AdobeARMservice start= disabled
+sc config gupdate start= disabled
+sc config gupdatem start= disabled
+
 schtasks.exe /Change /TN "\Adobe Acrobat Update Task" /Disable /ru ""
 schtasks.exe /Change /TN "\GoogleUpdateTaskMachineCore" /Disable /ru ""
 schtasks.exe /Change /TN "\GoogleUpdateTaskMachineUA" /Disable /ru ""
